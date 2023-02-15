@@ -7,7 +7,7 @@ const { verifyToken } = require('../../../config/middleware');
 router.post('/register', verifyToken, patientController.register);
 
 router.post('/:id/create_report', verifyToken, patientController.create_report);
-router.get('/:id/all_reports', patientController.all_reports);
+router.get('/:id/all_reports', verifyToken, patientController.all_reports);
 
 
 module.exports = router;
